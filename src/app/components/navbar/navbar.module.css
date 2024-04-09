@@ -1,0 +1,49 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 0 16px;
+}
+
+.title {
+    position: absolute;
+}
+
+.title span{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+    margin: auto;
+    position: relative;
+}
+
+.button {
+    display: block;
+    position: relative;
+    border: none;
+    background: none;
+    color: var(--color-text);
+    overflow: hidden;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: #ffffff;
+    transition: opacity 300ms, transform 300ms;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.button:hover::after, .button:focus::after {
+    transform: scale(1);
+}
