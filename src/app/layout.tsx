@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
 import Navbar from "./components/navbar/navbar";
+import Head from "next/head";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import "./globals.css";
 
