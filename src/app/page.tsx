@@ -22,9 +22,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className={styles.scroll_container}>
-        <div className={styles.scroll_text}>Open for work  •  Open for work  •  Open for work</div>
-      </div>
+
     </div>
   );
 }

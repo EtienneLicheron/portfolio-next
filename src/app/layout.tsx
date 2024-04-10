@@ -3,6 +3,8 @@ import { GeistSans } from 'geist/font/sans';
 import Navbar from "./components/navbar/navbar";
 import Head from "next/head";
 
+import styles from "./layout.module.css";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -23,6 +25,9 @@ export default function RootLayout({
       <body className={GeistSans.className}>
         <Navbar />
         {children}
+        <div className={styles.scroll_container}>
+          <div className={styles.scroll_text}>Open for work  •  Open for work  •  Open for work</div>
+        </div>
       </body>
     </html>
   );
