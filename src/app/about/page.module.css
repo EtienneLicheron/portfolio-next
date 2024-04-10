@@ -8,3 +8,12 @@
     flex-direction: column;
     z-index: -2;
 }
+
+.about iframe {
+    width: 18vw;
+    height: 30vh;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+}
