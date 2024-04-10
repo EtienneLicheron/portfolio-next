@@ -10,7 +10,7 @@ export default function Home() {
       <div className={styles.presentation}>
         <h1>Hello there ! 🖐</h1>
         <p>
-         I'm Etienne, a software engineer and a student at Epitech. I'm passionate about technology and I love to learn new things.
+         I&apos;m Etienne, a software engineer and a student at Epitech. I&apos;m passionate about technology and I love to learn new things.
         </p>
         <Link href='/projects' className={styles.project_link}>check my projects<FaArrowRightLong/></Link>
         <div className={styles.socials}>
