@@ -48,14 +48,14 @@ export default function Projects() {
     const slideLeft = () => {
         let slider = document.getElementById("slider");
         if (slider) {
-            slider.scrollLeft = slider.scrollLeft - 435;
+            slider.scrollLeft = slider.scrollLeft - 700;
         }
     };
     
     const slideRight = () => {
         let slider = document.getElementById("slider");
         if (slider) {
-            slider.scrollLeft = slider.scrollLeft + 435;
+            slider.scrollLeft = slider.scrollLeft + 700;
         }
     };
 
