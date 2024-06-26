@@ -3,6 +3,7 @@ import { GeistSans } from 'geist/font/sans';
 import Navbar from "./components/navbar/navbar";
 import styles from "./layout.module.css";
 import "./globals.css";
+import { Footer } from "./components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Etienne LICHERON",
@@ -18,10 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={GeistSans.className}>
         <Navbar />
-        {children}
-        <div className={styles.scroll_container}>
-          <div className={styles.scroll_text}>Open for work  •  Open for work  •  Open for work</div>
-        </div>
+          <div className={styles.page_container}>
+            {children}
+          </div>
+        <Footer />
       </body>
     </html>
   );

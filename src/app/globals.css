@@ -4,7 +4,7 @@
   /* Colors */
   --color-text: #f0f1f2;
   --color-background: #000000;
-
+  --color-grey: rgba(51, 51, 51, 0.5);
 
   background-color: var(--color-background);
   color: var(--color-text);
@@ -22,4 +22,35 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  resize: none;
+  border: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+input:focus, textarea:focus, button:focus{
+  outline: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #ffffff;
+    --color-text: #000000;
+  }
 }
