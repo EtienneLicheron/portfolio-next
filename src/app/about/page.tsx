@@ -20,10 +20,10 @@ export default function About() {
                 <h1>Studies</h1>
                 <div className={styles.card}>
                     <Image src={'/images/epitech.png'} alt="epitech" width={30} height={30} />
-                    <span>Expert Diploma in Information Technology - Epitech Montpellier/Paris (France)</span>
+                    Expert Diploma in Information Technology - Epitech Montpellier/Paris (France)
                 </div>
                 <div className={styles.card}>
-                    <Image src={'/images/heriot.png'} alt="epitech" width={30} height={30} />
+                    <Image src={'/images/heriot.png'} alt="heriot" width={30} height={30} />
                     MsC Software Engineering - Heriot-Watt (Edinburgh)
                 </div>
             </div>
