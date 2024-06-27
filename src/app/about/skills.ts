@@ -1,47 +1,47 @@
 export const skills = [
     {
         title: "React",
-        url: "React"
+        url: "react"
     },
     {
         title: "Next.js",
-        url: "Next.js"
+        url: "nextjs"
     },
     {
         title: "NestJS",
-        url: "NestJS"
+        url: "nestjs"
     },
     {
         title: "Angular",
-        url: "Angular"
+        url: "angular"
     },
     {
         title: "Docker",
-        url: "Docker"
+        url: "docker"
     },
     {
         title: "Python",
-        url: "Python"
+        url: "python"
     },
     {
         title: "C",
-        url: "C"
+        url: "c"
     },
     {
         title: "C++",
-        url: "CPP"
+        url: "cpp"
     },
     {
         title: "C#",
-        url: "CSHARP"
+        url: "csharp"
     },
     {
         title: "Javascript",
-        url: "Javascript"
+        url: "javascript"
     },
     {
         title: "Typescript",
-        url: "Typescript"
+        url: "typescript"
     },
     {
         title: "NodeJS",
