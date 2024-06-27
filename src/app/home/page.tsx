@@ -4,7 +4,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 
 import styles from './home.module.css';
 
-export const Home = () => {
+export default function Home() {
     return (
     <div className={styles.homepage}>
         <div className={styles.presentation}>
