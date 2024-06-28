@@ -9,7 +9,7 @@ export default function Navbar() {
             <Link href='/' style={{position: 'absolute', margin: '8px'}}>
                 <Text size={"6"} weight="bold" className={styles.title}>Etienne Licheron</Text >
             </Link>
-            <Flex className={styles.links} display={{initial:'none', lg:'flex', xs: 'none'}}>
+            <Flex className={styles.links} display={{initial:'none', lg:'flex', xs: 'none', xl: 'flex', md: 'none'}}>
                 <Link href='/'  className={styles.button}>Home</Link>
                 <Link href='/about' className={styles.button}>About</Link>
                 <Link href='/projects' className={styles.button}>Projects</Link>

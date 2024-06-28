@@ -41,7 +41,7 @@ export default function Projects() {
                 <Heading className={styles.title} size={{ md: '5', lg: '7'}}>$&#62; SOME PROJECTS I MADE <Text  size={{initial: '1', xs: '1', md: '3', lg: '5'}} className={styles.prompt}>█</Text></Heading>
             </Box>
             <Flex maxWidth={'100vw'}>
-                <Flex className={styles.projects_container} id="slider"  direction={{xs: 'column', initial: 'column', lg: 'row'}} overflowY={{xs: 'auto', initial: 'auto'}}>
+                <Flex className={styles.projects_container} id="slider" direction={{xs: 'column', initial: 'column', lg: 'row'}} overflowY={{xs: 'auto', initial: 'auto'}}>
                     {projects.map(project => (
                         <Flex className={styles.project} key={project.id} width={{xs: '90vw', initial: '90vw', lg: '20vw', md: '50vw'}}>
                             <h2>{project.title}</h2>
