@@ -3,12 +3,14 @@ import Link from 'next/link';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
 import styles from './home.module.css';
+import { Box, Flex, Heading, Text } from '@radix-ui/themes';
 
 export default function Home() {
     return (
     <div className={styles.homepage}>
-        <div className={styles.presentation}>
-          <h1>Hello there ! 🖐</h1>
+        {/* <div className={`${styles.presentation} flex flex-col items-center justify-center p-8 w-5/6 h-30 `}> */}
+        <Flex width={{lg: '30vw', xs: '90vw', md:'30vw', initial: '90vw'}} direction={'column'} p={'12px'} className={styles.presentation} >
+          <Text size={{initial: '8', xs: '8'}} m={'3'}>Hello there ! 🖐</Text>
           <p>
             I&apos;m Etienne, a software engineer and a student at Epitech. I&apos;m passionate about technology and I love to learn new things.
           </p>
@@ -21,7 +23,8 @@ export default function Home() {
               <Image src="github-mark-white.svg" alt="github" width={25} height={25} />
             </a>
           </div>
-        </div>
+        </Flex>
+        {/* </div> */}
       </div>
     )
 }

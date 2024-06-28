@@ -8,6 +8,7 @@
 
   background-color: var(--color-background);
   color: var(--color-text);
+  scroll-behavior: smooth;
 }
 
 * {
@@ -56,9 +57,9 @@ img {
   -ms-user-select: none;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     --color-background: #ffffff;
     --color-text: #000000;
   }
-}
+} */

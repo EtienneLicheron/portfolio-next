@@ -1,14 +1,8 @@
 .presentation {
-    display: flex;
     flex-direction: column;
     border-radius: 15px;
-    width: 30vw;
     background-color: var(--color-background);
-    padding: 16px;
-    font-size: 1.5rem;
     position: relative;
-    max-width: 30vw;
-    max-height: 50vh;
 }
 
 .presentation:before {

@@ -7,18 +7,6 @@
     background-color: var(--color-background);
 }
 
-.title {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 2px;
-}
-
-.title span {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
 .links {
     display: flex;
     gap: 24px;

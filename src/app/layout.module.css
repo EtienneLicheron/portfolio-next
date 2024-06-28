@@ -17,9 +17,10 @@
     z-index: -1;
     background: black;
     background: linear-gradient(0deg, rgb(20, 20, 20) 0%, rgb(0, 0, 0) 100%);
+    background-size: cover;
     /* background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #ffffff17 50%, rgb(0, 0, 0) 100%); */
     /* #1b1a37 */
     /* filter: blur(10px); */
     /* filter : blur(100px); */
-    background-size: 200%;
+    /* background-size: 200%; */
 }
