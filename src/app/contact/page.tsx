@@ -3,7 +3,9 @@ import { Resend } from "resend";
 import styles from "./contact.module.css";
 import { useState } from "react";
 import { useFormState } from "react-dom";
-import { Box, Flex, TextField } from "@radix-ui/themes";
+import { Box, Button, Flex, TextArea, TextField, Text, Em } from "@radix-ui/themes";
+import { PersonIcon, EnvelopeClosedIcon, Pencil1Icon } from "@radix-ui/react-icons";
+import Image from "next/image";
 
 export default function Contact() {
 
@@ -21,24 +23,53 @@ export default function Contact() {
             subject: formData.get('subject'),
             message: formData.get('message')
         };
-        const response = await fetch('/api/send', {
-            method: 'POST',
-            body: JSON.stringify(rawFormData)
-        });
+        console.log(rawFormData);
+        // const response = await fetch('/api/send', {
+        //     method: 'POST',
+        //     body: JSON.stringify(rawFormData)
+        // });
     }
 
     return (
-        <div className={styles.contact}>
-            <div className={styles.contact_header}>
-                <h1>Send me a message</h1>
-            </div>
-            <form className={styles.contact_form} action={sendEmail}>
-                <input type="text" id="name" name="name" onKeyDown={handleKeyDown} placeholder="Full name" required/>
-                <input type="email" id="email" name="email" onKeyDown={handleKeyDown} placeholder="Your email" required/>
-                <input type="text" id="subject" name="subject" onKeyDown={handleKeyDown} placeholder="Subject" required/>
-                <textarea id="message" name="message" onKeyDown={handleKeyDown} placeholder="Your message goes here..." maxLength={300} required />
-                <button type="submit">Send</button>
+        <>
+        <Flex position={'absolute'} bottom={'0'} left={'5'} display={{initial: 'none', md: 'flex'}}>
+            <Image src="/memoji-contact.png" alt="Contact me" width={200} height={200}/>
+        </Flex>
+        <Flex position={'absolute'} bottom={'0'} display={{initial: 'flex', md: 'none'}}>
+            <Image src="/memoji-contact.png" alt="Contact me" width={150} height={150}/>
+        </Flex>
+        <Flex direction={'column'} align={'center'} justify={'center'} className={styles.contact} height={{lg: '50vh'}} width={{initial: '90vw', lg: '30vw'}}>
+            <Text size={{initial: '7', lg: '8'}} mt={'5'}><Em>Get in touch with me</Em></Text>
+            <form action={sendEmail} onKeyDown={handleKeyDown}>
+                <Flex direction="column" align="center" justify={'center'} width={{initial: '70vw', lg: '30vw'}} height={{initial: '35vh'}} gap={'4'}>
+                    <Box minWidth={'20vw'} width={{initial: '70vw', lg: '20vw'}}>
+                        <TextField.Root size="2" placeholder="Full name..." name="name" type="text" required>
+                            <TextField.Slot>
+                                <PersonIcon height="16" width="16" />
+                            </TextField.Slot>
+                        </TextField.Root>
+                    </Box>
+                    <Box minWidth={'20vw'} width={{initial: '70vw', lg: '20vw'}}>
+                        <TextField.Root size="2" placeholder="Your email..." name="email" type="email" required>
+                            <TextField.Slot>
+                                <EnvelopeClosedIcon height="16" width="16" />
+                            </TextField.Slot>
+                        </TextField.Root>
+                    </Box>
+                    <Box minWidth={'20vw'} width={{initial: '70vw', lg: '20vw'}}>
+                        <TextField.Root size="2" placeholder="Subject..." name="subject" type="text" required>
+                            <TextField.Slot>
+                                <Pencil1Icon height="16" width="16" />
+                            </TextField.Slot>
+                        </TextField.Root>
+                    </Box>
+                    <Box minWidth={'20vw'} width={{initial: '70vw', lg: '20vw'}}maxHeight={'20vh'}>
+                        <TextArea id="message" name="message" placeholder="Your message goes here..." required />
+                    </Box>
+                    <Button size="2" variant="soft" type="submit">Send</Button>
+                </Flex>
             </form>
-        </div>
+        </Flex>
+        </>
     )
 }

@@ -45,7 +45,6 @@
     word-wrap: break-word;
     white-space:pre-wrap;
     position: relative;
-    /* z-index: 5; */
 }
 
 .project::before {

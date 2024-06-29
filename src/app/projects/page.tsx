@@ -4,7 +4,7 @@ import { projects } from "./projects";
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { Box, Em, Flex, Heading, ScrollArea, Text } from "@radix-ui/themes";
+import { Badge, Box, Em, Flex, Heading, ScrollArea, Text } from "@radix-ui/themes";
 import { useCallback, useState } from "react";
 
 import { useRef, useEffect } from "react";
@@ -45,11 +45,12 @@ export default function Projects() {
                     {projects.map(project => (
                         <Flex className={styles.project} key={project.id} width={{xs: '90vw', initial: '90vw', lg: '20vw', md: '50vw'}}>
                             <h2>{project.title}</h2>
-                            <div className={styles.tags}>
+                            <Flex gap="2" mb={'2'}>
                                 {project.tags.map(tag => (
-                                    <span key={tag} className={styles.tag}>{tag}</span>
+                                    // <span key={tag} className={styles.tag}>{tag}</span>
+                                    <Badge variant="soft" color="indigo">{tag}</Badge>
                                 ))}
-                            </div>
+                            </Flex>
                             <p>{project.description}</p>
                             <a href={project.link} target="_blank" rel="noopener noreferrer">
                                 {project.link.includes("github") ? "View on GitHub" : "View Website"}

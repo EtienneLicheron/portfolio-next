@@ -12,16 +12,16 @@ export default function About() {
 
     return (
         <Flex direction={{initial: 'column', lg: 'row'}} justify={{lg: 'center'}} align={'center'}  height={'calc(100vh - 64px)'}>
-            <Flex direction="column" gap="5" width={{initial: '90vw', lg: '30vw'}} align={'center'}>
+            <Flex direction="column" gap="5" width={{initial: '90vw', lg: '40vw'}} align={'center'}>
                 <h1>
                     About me
                 </h1>
-                <Box>
-                    <Text>
-                        From south of France. Currently living in Paris,
+                <Flex>
+                    <Text align={'center'}>
+                        From south of France, currently living in Paris.
                         I am a junior developer passionate about technology and innovation. I master several languages thanks to school and personal projects.
                     </Text>
-                </Box>
+                </Flex>
                 <h1>
                     Studies
                 </h1>
@@ -56,7 +56,7 @@ export default function About() {
                     </Card>
                 </Box>
             </Flex>
-            <Flex direction="column">
+            <Flex direction="column" display={{initial: 'none', lg: 'flex'}}>
                 <Image src="/memoji.png" alt="Profile" width={200} height={200} />
             </Flex>
             <Flex direction="column" width={{initial: '90vw', lg: '40vw'}} align={'center'}>

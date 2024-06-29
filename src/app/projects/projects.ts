@@ -4,14 +4,14 @@ export const projects = [
         title: "Helio 🧭",
         description: "Helio is an Adventure-based RPG Game Bot currently in development. I am working on the backend and the web application. I also implemented features on the Discord bot.",
         link: "https://helio.gg/",
-        tags: ["New🔥" ,"NestJS", "Next.js", "Discord"]
+        tags: ["NestJS", "Angular", "DiscordJS", "WebSockets"]
     },
     {
         id: 2,
         title: "My Portfolio ✨",
         description: "Repositoy of this website. I learned how to use Next.js by creating this website.",
         link: "https://github.com/EtienneLicheron/portfolio-next",
-        tags: ["Next.js", "React", "TypeScript", "CSS"]
+        tags: ["Next.js", "React", "TypeScript", "Tailwind"]
     },
     {
         id: 3,
