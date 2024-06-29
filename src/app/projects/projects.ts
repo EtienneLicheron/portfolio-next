@@ -11,7 +11,7 @@ export const projects = [
         title: "My Portfolio ✨",
         description: "Repositoy of this website. I learned how to use Next.js by creating this website.",
         link: "https://github.com/EtienneLicheron/portfolio-next",
-        tags: ["Next.js", "React", "TypeScript", "Tailwind"]
+        tags: ["Next.js", "React", "TypeScript", "RadixUI"]
     },
     {
         id: 3,

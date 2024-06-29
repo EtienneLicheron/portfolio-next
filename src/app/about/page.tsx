@@ -16,10 +16,9 @@ export default function About() {
                 <h1>
                     About me
                 </h1>
-                <Flex>
+                <Flex maxWidth={{initial: '90vw', lg: '35vw'}}>
                     <Text align={'center'}>
-                        From south of France, currently living in Paris.
-                        I am a junior developer passionate about technology and innovation. I master several languages thanks to school and personal projects.
+                        I am a 21 years old Junior Developer currently in my fourth year at Epitech. My academic journey has equipped me with a solid foundation in various programming languages and software development methodologies. I have a keen interest in both front-end and back-end development, and I am constantly striving to expand my knowledge and skills in these areas. My experience at Epitech has also fostered my ability to work effectively in team settings, adapt to new technologies quickly, and solve complex problems creatively. I am passionate about coding and eager to contribute to innovative projects that make a difference.
                     </Text>
                 </Flex>
                 <h1>

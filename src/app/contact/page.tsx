@@ -31,15 +31,8 @@ export default function Contact() {
     }
 
     return (
-        <>
-        <Flex position={'absolute'} bottom={'0'} left={'5'} display={{initial: 'none', md: 'flex'}}>
-            <Image src="/memoji-contact.png" alt="Contact me" width={200} height={200}/>
-        </Flex>
-        <Flex position={'absolute'} bottom={'0'} display={{initial: 'flex', md: 'none'}}>
-            <Image src="/memoji-contact.png" alt="Contact me" width={150} height={150}/>
-        </Flex>
         <Flex direction={'column'} align={'center'} justify={'center'} className={styles.contact} height={{lg: '50vh'}} width={{initial: '90vw', lg: '30vw'}}>
-            <Text size={{initial: '7', lg: '8'}} mt={'5'}><Em>Get in touch with me</Em></Text>
+            <Text size={{initial: '7', lg: '8'}} mt={'5'}>Get in touch with me</Text>
             <form action={sendEmail} onKeyDown={handleKeyDown}>
                 <Flex direction="column" align="center" justify={'center'} width={{initial: '70vw', lg: '30vw'}} height={{initial: '35vh'}} gap={'4'}>
                     <Box minWidth={'20vw'} width={{initial: '70vw', lg: '20vw'}}>
@@ -70,6 +63,5 @@ export default function Contact() {
                 </Flex>
             </form>
         </Flex>
-        </>
     )
 }
