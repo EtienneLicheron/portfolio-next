@@ -36,7 +36,7 @@ export default function Projects() {
     const scrollRef:any = useHorizontalScroll();
 
     return (
-        <Flex direction={'column'} align={'center'} justify={{lg: 'center'}} ref={scrollRef} height={'calc(100vh - 64px)'}>
+        <Flex direction={'column'} align={'center'} justify={{ lg: 'center' }} ref={scrollRef} height={'calc(100vh - 64px)'} >
             <Box display={{xs: 'none', initial: 'none', lg: 'block'}}>
                 <Heading className={styles.title} size={{ md: '5', lg: '7'}}>$&#62; SOME PROJECTS I MADE <Text  size={{initial: '1', xs: '1', md: '3', lg: '5'}} className={styles.prompt}>█</Text></Heading>
             </Box>

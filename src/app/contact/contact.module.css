@@ -61,25 +61,5 @@
     z-index: -1;
     background: linear-gradient(60deg, rgb(255, 0, 255) 0%, rgb(0, 255, 85) 100%);
     filter: blur(10px);
-    background-size: 200% 200%;
-
-    -webkit-animation: Animation 3s ease infinite;
-    -moz-animation: Animation 3s ease infinite;
-    animation: Animation 3s ease infinite;
-}
-
-@-webkit-keyframes Animation {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
-}
-@-moz-keyframes Animation {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
-}
-@keyframes Animation { 
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
+    background-size: 100% 100%;
 }

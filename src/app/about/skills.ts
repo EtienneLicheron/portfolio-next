@@ -24,6 +24,18 @@ export const skills = [
         url: "python"
     },
     {
+        title: "Javascript",
+        url: "javascript"
+    },
+    {
+        title: "Typescript",
+        url: "typescript"
+    },
+    {
+        title: "NodeJS",
+        url: "node"
+    },
+    {
         title: "C",
         url: "c"
     },
@@ -35,16 +47,4 @@ export const skills = [
         title: "C#",
         url: "csharp"
     },
-    {
-        title: "Javascript",
-        url: "javascript"
-    },
-    {
-        title: "Typescript",
-        url: "typescript"
-    },
-    {
-        title: "NodeJS",
-        url: "node"
-    }
-];
+    ];

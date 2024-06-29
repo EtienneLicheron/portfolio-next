@@ -35,17 +35,30 @@
 
 .project {
     background-color: black;
-    border: 3px solid rgb(46, 46, 46);
-    border-radius: 8px;
+    border-radius: 15px;
     height: 45vh;
     min-width: 18vw;
     padding: 1rem;
-    outline: 2px solid rgba(0, 0, 0, 0.205);
     transition: all 0.15s ease-in;
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
     white-space:pre-wrap;
+    position: relative;
+    /* z-index: 5; */
+}
+
+.project::before {
+    content:"";
+    position: absolute;
+    inset: -5px;
+    z-index: -2;
+    background: linear-gradient(60deg, rgb(206, 9, 58) 0%, rgb(0, 132, 255) 100%);
+    filter: blur(8px);
+    background-size: 200% 200%;
+    -webkit-animation: Animation 3s ease infinite;
+    -moz-animation: Animation 3s ease infinite;
+    animation: Animation 3s ease infinite;
 }
 
 .project h2 {

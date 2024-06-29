@@ -56,10 +56,3 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    --color-background: #ffffff;
-    --color-text: #000000;
-  }
-} */

@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Navbar() {
     return (
         // <div className='justify-between items-center py-4 px-8 bg-black text-white hidden sm:flex'>
-        <Flex direction={'row'} height={'64px'} align={'center'}>
+        <Flex direction={'row'} height={'64px'} align={'center'} style={{background: 'black'}}>
             <Link href='/' style={{position: 'absolute', margin: '8px'}}>
                 <Text size={"6"} weight="bold" className={styles.title}>Etienne Licheron</Text >
             </Link>

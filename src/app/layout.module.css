@@ -1,26 +1,10 @@
 .page_container {
-    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.2)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e"); */
-    /* background-size: 128px; */
     /* background: linear-gradient(0deg, rgb(25, 25, 25) 0%, rgb(0, 0, 0) 100%); */
-    height: calc(100vh - 64px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: -5;
-}
-
-.page_container::before {
-    content: "";
-    position: absolute;
-    inset: 0px;
-    z-index: -1;
-    background: black;
-    background: linear-gradient(0deg, rgb(20, 20, 20) 0%, rgb(0, 0, 0) 100%);
-    background-size: cover;
-    /* background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #ffffff17 50%, rgb(0, 0, 0) 100%); */
-    /* #1b1a37 */
-    /* filter: blur(10px); */
-    /* filter : blur(100px); */
-    /* background-size: 200%; */
+    position: relative;
+    height: calc(100vh - 64px);
 }
