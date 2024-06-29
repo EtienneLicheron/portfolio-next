@@ -1,10 +1,18 @@
 "use client";
+import { useState } from "react";
+
 import { Box, Button, Flex, TextArea, TextField, Text } from "@radix-ui/themes";
-import { PersonIcon, EnvelopeClosedIcon, Pencil1Icon } from "@radix-ui/react-icons";
+import { PersonIcon, EnvelopeClosedIcon, Pencil1Icon, CheckIcon } from "@radix-ui/react-icons";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import styles from "./contact.module.css";
 
 export default function Contact() {
+    const [open, setOpen] = useState(false);
+    const [isSent, setIsSent] = useState(false);
+    const [buttonText, setButtonText] = useState('Send');
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === "Enter") {
@@ -19,14 +27,24 @@ export default function Contact() {
             subject: formData.get('subject'),
             message: formData.get('message')
         };
-        await fetch('/api/send', {
+
+        const res = await fetch('/api/send', {
             method: 'POST',
             body: JSON.stringify(rawFormData)
         });
+
+        if (res.ok) {
+            setButtonText('Sent !');
+            setIsSent(true);
+            toast("Message sent successfully", {type: 'success'})
+        } else {
+            toast("An error occured while sending the message", {type: 'error'})
+        }
     }
 
     return (
         <Flex direction={'column'} align={'center'} justify={'center'} className={styles.contact} height={{lg: '50vh'}} width={{initial: '90vw', lg: '30vw'}}>
+            <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss pauseOnHover theme="dark"/>
             <Text size={{initial: '7', lg: '8'}} mt={'5'}>Get in touch with me</Text>
             <form action={sendEmail} onKeyDown={handleKeyDown}>
                 <Flex direction="column" align="center" justify={'center'} width={{initial: '70vw', lg: '30vw'}} height={{initial: '35vh'}} gap={'4'}>
@@ -51,10 +69,12 @@ export default function Contact() {
                             </TextField.Slot>
                         </TextField.Root>
                     </Box>
-                    <Box minWidth={'20vw'} width={{initial: '70vw', lg: '20vw'}}maxHeight={'20vh'}>
+                    <Box minWidth={'20vw'} width={{initial: '70vw', lg: '20vw'}} maxHeight={'30vh'}>
                         <TextArea id="message" name="message" placeholder="Your message goes here..." required />
                     </Box>
-                    <Button size="2" variant="soft" type="submit">Send</Button>
+                    <Button size="2" variant="soft" type="submit" disabled={isSent}>
+                        { buttonText }
+                    </Button>
                 </Flex>
             </form>
         </Flex>

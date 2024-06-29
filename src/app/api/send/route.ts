@@ -1,4 +1,3 @@
-import { NextRequest } from 'next/server';
 import { EmailTemplate } from '../../components/email/emailTemplate';
 import { Resend } from 'resend';
 
