@@ -47,8 +47,7 @@ export default function Projects() {
                             <h2>{project.title}</h2>
                             <Flex gap="2" mb={'2'}>
                                 {project.tags.map(tag => (
-                                    // <span key={tag} className={styles.tag}>{tag}</span>
-                                    <Badge variant="soft" color="indigo">{tag}</Badge>
+                                    <Badge variant="soft" key={tag} color="indigo">{tag}</Badge>
                                 ))}
                             </Flex>
                             <p>{project.description}</p>
