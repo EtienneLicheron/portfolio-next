@@ -1,0 +1,16 @@
+.contact {
+    background-color: var(--color-background);
+    position: relative;
+    border: 1px solid rgb(44, 44, 44);
+    border-radius: 15px;
+}
+
+.contact:before {
+    content:"";
+    position: absolute;
+    inset: -4px;
+    z-index: -1;
+    background: linear-gradient(60deg, rgb(255, 0, 212) 0%, rgb(255, 0, 0) 100%);
+    filter: blur(10px);
+    background-size: 100% 100%;
+}

@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { GeistSans } from 'geist/font/sans';
+import { Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
+
 import Navbar from "./components/navbar/navbar";
-import styles from "./layout.module.css";
+import Footer from "./components/footer/footer";
+
 import "./globals.css";
+import styles from "./layout.module.css";
 
 export const metadata: Metadata = {
   title: "Etienne LICHERON",
@@ -16,12 +20,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={GeistSans.className}>
-        <Navbar />
-        {children}
-        <div className={styles.scroll_container}>
-          <div className={styles.scroll_text}>Open for work  •  Open for work  •  Open for work</div>
-        </div>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <body>
+      <Theme accentColor="gray" appearance="dark" hasBackground={false} >
+          <Navbar />
+          <div className={styles.page_container}>
+            {children}
+          </div>
+        <Footer />
+      </Theme>
       </body>
     </html>
   );

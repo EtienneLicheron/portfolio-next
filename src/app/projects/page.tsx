@@ -1,91 +1,60 @@
 "use client";
-import next from "next";
-import styles from "./page.module.css";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { useRef, useEffect } from "react";
+
+import { Badge, Box, Flex, Heading, Text } from "@radix-ui/themes";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { use } from "react";
+
+import styles from "./projects.module.css";
+import { projects } from "./projects";
+
+function useHorizontalScroll() {
+    const elRef = useRef();
+    useEffect(() => {
+        const el :any = elRef.current;
+        if (el) {
+            const onWheel = (e: any) => {
+                if (e.deltaY == 0) return;
+                let slider = document.getElementById("slider");
+                if (slider) {
+                    slider.scrollLeft += Math.round(e.deltaY) * 0.8;
+                    return;
+                }
+                e.preventDefault();
+            };
+            el.addEventListener("wheel", onWheel);
+            return () => el.removeEventListener("wheel", onWheel);
+        }
+    }, []);
+    return elRef;
+}
 
 export default function Projects() {
-
-    const projects = [
-        {
-            id: 1,
-            title: "My Portfolio ✨",
-            description: "Repositoy of this website. I learned how to use Next.js by creating this website.",
-            link: "https://github.com/EtienneLicheron/portfolio-next",
-            tags: ["Next.js", "React", "TypeScript", "CSS"]
-        },
-        {
-            id: 2,
-            title: "R-Type 🚀",
-            description: "Cross-platform and multiplayer game project based on RType. I worked on the server side and the game engine. The game is written in C++ and uses the SFML and Asio library.",
-            link: "https://github.com/EtienneLicheron/Rtype-epitech",
-            tags: ["C++", "SFML", "TCP", "UDP"]
-        },
-        {
-            id: 3,
-            title: "Whanos 🐳",
-            description: "Devops project using Docker and Jenkins. The goal was to deploy an image to a Docker Registry and deploy it on a Kubernetes cluster.",
-            link: "https://github.com/EtienneLicheron/Whanos-epitech",
-            tags: ["Docker", "Jenkins", "Kubernetes"]
-        },
-        {
-            id: 4,
-            title: "Area 🤖",
-            description: "FullStack project using React, React Native and NestJS. This application allows you to connect all your accounts (Spotify, Deezer, Gmail, etc.) and create automations between them.",
-            link: "https://github.com/EtienneLicheron/Area-epitech",
-            tags: ["React", "React Native", "NestJS", "OAuth2"]
-        },
-        {
-            id: 5,
-            title: "AbstractVM 🖥️",
-            description: "A simple virtual machine that is able to interpret programs that are written in a simplified assembler language written in C++.",
-            link: "https://github.com/EtienneLicheron/AbstractVM",
-            tags: ["C++"]
-        }
-    ]
-
-    const slideLeft = () => {
-        let slider = document.getElementById("slider");
-        if (slider) {
-            slider.scrollLeft = slider.scrollLeft - 700;
-        }
-    };
-    
-    const slideRight = () => {
-        let slider = document.getElementById("slider");
-        if (slider) {
-            slider.scrollLeft = slider.scrollLeft + 700;
-        }
-    };
+    const scrollRef: any = useHorizontalScroll();
 
     return (
-        <div className={styles.projects}>
-            <h1>$&#62; SOME PROJECTS I MADE <span className={styles.prompt}>█</span></h1>
-            <div className={styles.container}>
-                <div className={styles.projects_container} id="slider">
+        <Flex direction={'column'} align={'center'} justify={{ lg: 'center' }} ref={scrollRef} height={'calc(100vh - 64px)'} >
+            <Box display={{xs: 'none', initial: 'none', lg: 'block'}}>
+                <Heading className={styles.title} size={{ md: '5', lg: '7'}}>$&#62; SOME PROJECTS I MADE <Text  size={{initial: '1', xs: '1', md: '3', lg: '5'}} className={styles.prompt}>█</Text></Heading>
+            </Box>
+            <Flex maxWidth={'100vw'}>
+                <Flex className={styles.projects_container} id="slider" direction={{xs: 'column', initial: 'column', lg: 'row'}} overflowY={{xs: 'auto', initial: 'auto'}}>
                     {projects.map(project => (
-                        <div className={styles.project} key={project.id}>
+                        <Flex className={styles.project} key={project.id} width={{xs: '90vw', initial: '90vw', lg: '20vw', md: '50vw'}}>
                             <h2>{project.title}</h2>
-                            <div className={styles.tags}>
+                            <Flex gap="2" mb={'2'}>
                                 {project.tags.map(tag => (
-                                    <span key={tag} className={styles.tag}>{tag}</span>
+                                    <Badge variant="soft" key={tag} color="indigo">{tag}</Badge>
                                 ))}
-                            </div>
+                            </Flex>
                             <p>{project.description}</p>
-                            <a href={project.link} target="_blank" rel="noopener noreferrer">View on GitHub<FaArrowRightLong/></a>
-                        </div>
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                {project.link.includes("github") ? "View on GitHub" : "View Website"}
+                                <FaArrowRightLong/>
+                            </a>
+                        </Flex>
                     ))}
-                </div>
-            </div>
-            <div className={styles.scrollbuttons}>
-                <button title="scroll left" className={styles.btn} onClick={slideLeft}>
-                    <AiOutlineArrowLeft />
-                </button>
-                <button title="scroll right" className={styles.btn} onClick={slideRight}>
-                    <AiOutlineArrowRight />
-                </button>
-            </div>
-        </div>
+                </Flex>
+            </Flex>
+        </Flex>
     )
 }

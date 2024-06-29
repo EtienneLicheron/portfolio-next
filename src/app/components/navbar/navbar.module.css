@@ -1,26 +1,6 @@
-.navbar {
-    display: flex;
-    align-items: center;
-    height: 64px;
-    padding: 0 16px;
-    z-index: 10;
-    background-color: black;
-}
-
-.title {
-    position: absolute;
-}
-
-.title span{
-    font-size: 1.5em;
-    font-weight: bolder;
-}
-
 .links {
-    display: flex;
     gap: 24px;
     margin: auto;
-    position: relative;
 }
 
 .button {

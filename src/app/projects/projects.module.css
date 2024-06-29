@@ -1,0 +1,87 @@
+.title {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    align-items: center;
+    padding: 0;
+}
+
+.projects_container {
+    display: flex;
+    gap: 10vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 5vw;
+}
+
+.project {
+    background-color: black;
+    border-radius: 15px;
+    height: 45vh;
+    min-width: 18vw;
+    padding: 1rem;
+    transition: all 0.15s ease-in;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    white-space:pre-wrap;
+    position: relative;
+}
+
+.project::before {
+    content:"";
+    position: absolute;
+    inset: -5px;
+    z-index: -2;
+    background: linear-gradient(60deg, rgb(206, 9, 58) 0%, rgb(0, 132, 255) 100%);
+    filter: blur(8px);
+    background-size: 200% 200%;
+    -webkit-animation: Animation 3s ease infinite;
+    -moz-animation: Animation 3s ease infinite;
+    animation: Animation 3s ease infinite;
+}
+
+.project h2 {
+    color: white;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+
+.project p {
+    color: white;
+    margin: 0;
+}
+
+.project a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    gap: 4px;
+    transition: all 0.15s ease-in;
+}
+
+.project a:hover {
+    gap: 6px;
+}
+
+.prompt {
+    color: white;
+    animation: prompt 0.8s ease-in-out infinite;
+    margin-bottom: 0.5vh;
+    user-select: none;
+}
+
+@keyframes prompt {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
