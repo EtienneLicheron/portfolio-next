@@ -70,7 +70,7 @@ export default function Contact() {
                         </TextField.Root>
                     </Box>
                     <Box minWidth={'20vw'} width={{initial: '70vw', lg: '20vw'}} maxHeight={'30vh'}>
-                        <TextArea id="message" name="message" placeholder="Your message goes here..." required />
+                        <TextArea id="message" name="message" placeholder="Your message goes here..." required maxLength={300}/>
                     </Box>
                     <Button size="2" variant="soft" type="submit" disabled={isSent}>
                         { buttonText }
