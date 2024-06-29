@@ -1,13 +1,14 @@
-import { Button, DropdownMenu, Flex, Heading, Text } from '@radix-ui/themes';
-import styles from './navbar.module.css';
 import Link from 'next/link'
+
+import { Button, DropdownMenu, Flex, Text } from '@radix-ui/themes';
+
+import styles from './navbar.module.css';
 
 export default function Navbar() {
     return (
-        // <div className='justify-between items-center py-4 px-8 bg-black text-white hidden sm:flex'>
-        <Flex direction={'row'} height={'64px'} align={'center'} style={{background: 'black'}}>
+        <Flex direction={'row'} height={'64px'} align={'center'}>
             <Link href='/' style={{position: 'absolute', margin: '8px'}}>
-                <Text size={"6"} weight="bold" className={styles.title}>Etienne Licheron</Text >
+                <Text size={"6"} m={"2"} weight="bold">Etienne Licheron</Text>
             </Link>
             <Flex className={styles.links} display={{initial:'none', lg:'flex', xs: 'none', xl: 'flex', md: 'none'}} position={'relative'}>
                 <Link href='/'  className={styles.button}>Home</Link>
@@ -19,8 +20,8 @@ export default function Navbar() {
                 <DropdownMenu.Root>
                     <DropdownMenu.Trigger>
                         <Button variant="soft">
-                        Menu
-                        <DropdownMenu.TriggerIcon />
+                            Menu
+                            <DropdownMenu.TriggerIcon />
                         </Button>
                     </DropdownMenu.Trigger>
                     <DropdownMenu.Content size={'2'} sideOffset={5}>
@@ -32,6 +33,5 @@ export default function Navbar() {
                 </DropdownMenu.Root>
             </Flex>
         </Flex>
-        // </div>
     );
 }

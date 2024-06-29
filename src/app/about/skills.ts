@@ -47,4 +47,4 @@ export const skills = [
         title: "C#",
         url: "csharp"
     },
-    ];
+];

@@ -1,15 +1,11 @@
 "use client";
-import styles from "./about.module.css";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { SkillCard } from "../components/skillCard/skillCard";
-
-import { skills } from "./skills";
 import { Avatar, Box, Card, Flex, Text } from "@radix-ui/themes";
 
-export default function About() {
+import { SkillCard } from "../components/skillCard/skillCard";
+import { skills } from "./skills";
 
+export default function About() {
     return (
         <Flex direction={{initial: 'column', lg: 'row'}} justify={{lg: 'center'}} align={'center'}  height={'calc(100vh - 64px)'}>
             <Flex direction="column" gap="5" width={{initial: '90vw', lg: '40vw'}} align={'center'}>

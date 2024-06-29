@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { GeistSans } from 'geist/font/sans';
-import Navbar from "./components/navbar/navbar";
-import '@radix-ui/themes/styles.css';
-import styles from "./layout.module.css";
-import "./globals.css";
-import { Footer } from "./components/footer/footer";
 import { Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
 
+import Navbar from "./components/navbar/navbar";
+import Footer from "./components/footer/footer";
+
+import "./globals.css";
+import styles from "./layout.module.css";
 
 export const metadata: Metadata = {
   title: "Etienne LICHERON",

@@ -1,17 +1,13 @@
 "use client";
+import { useRef, useEffect } from "react";
+
+import { Badge, Box, Flex, Heading, Text } from "@radix-ui/themes";
+import { FaArrowRightLong } from "react-icons/fa6";
+
 import styles from "./projects.module.css";
 import { projects } from "./projects";
 
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { Badge, Box, Em, Flex, Heading, ScrollArea, Text } from "@radix-ui/themes";
-import { useCallback, useState } from "react";
-
-import { useRef, useEffect } from "react";
-
 function useHorizontalScroll() {
-    const scrollThreshold = 200;
-
     const elRef = useRef();
     useEffect(() => {
         const el :any = elRef.current;
@@ -29,11 +25,11 @@ function useHorizontalScroll() {
             return () => el.removeEventListener("wheel", onWheel);
         }
     }, []);
-  return elRef;
+    return elRef;
 }
 
 export default function Projects() {
-    const scrollRef:any = useHorizontalScroll();
+    const scrollRef: any = useHorizontalScroll();
 
     return (
         <Flex direction={'column'} align={'center'} justify={{ lg: 'center' }} ref={scrollRef} height={'calc(100vh - 64px)'} >

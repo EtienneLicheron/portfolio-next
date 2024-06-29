@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import styles from './skillCard.module.css'
-import { useEffect, useState } from 'react'
-import { Flex, Box } from '@radix-ui/themes'
+import { Flex } from '@radix-ui/themes'
 
 export const SkillCard = ({title, url} : {title: string, url: string}) => {
     return (

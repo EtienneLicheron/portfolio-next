@@ -20,11 +20,6 @@
     animation: Animation 3s ease infinite;
 }
 
-.presentation h1 {
-    margin: 12px;
-    font-size: 3rem;
-}
-
 .presentation p {
     margin: 12px;
 }

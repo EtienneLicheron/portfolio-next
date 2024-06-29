@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { Flex, Text } from '@radix-ui/themes';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
 import styles from './home.module.css';
-import { Box, Flex, Heading, Text } from '@radix-ui/themes';
 
 export default function Home() {
     return (
-    <div className={styles.homepage}>
-        {/* <div className={`${styles.presentation} flex flex-col items-center justify-center p-8 w-5/6 h-30 `}> */}
+    <div>
         <Flex width={{lg: '30vw', xs: '90vw', md:'30vw', initial: '90vw'}} direction={'column'} p={'12px'} className={styles.presentation} >
           <Text size={{initial: '8', xs: '8'}} m={'3'}>Hello there ! 🖐</Text>
           <p>
@@ -24,7 +24,6 @@ export default function Home() {
             </a>
           </div>
         </Flex>
-        {/* </div> */}
       </div>
     )
 }

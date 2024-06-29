@@ -1,11 +1,8 @@
 "use client";
-import { Resend } from "resend";
-import styles from "./contact.module.css";
-import { useState } from "react";
-import { useFormState } from "react-dom";
-import { Box, Button, Flex, TextArea, TextField, Text, Em } from "@radix-ui/themes";
+import { Box, Button, Flex, TextArea, TextField, Text } from "@radix-ui/themes";
 import { PersonIcon, EnvelopeClosedIcon, Pencil1Icon } from "@radix-ui/react-icons";
-import Image from "next/image";
+
+import styles from "./contact.module.css";
 
 export default function Contact() {
 
@@ -16,18 +13,16 @@ export default function Contact() {
     }
 
     async function sendEmail(formData: FormData) {
-        // 'use server';
         const rawFormData = {
             name: formData.get('name'),
             email: formData.get('email'),
             subject: formData.get('subject'),
             message: formData.get('message')
         };
-        console.log(rawFormData);
-        // const response = await fetch('/api/send', {
-        //     method: 'POST',
-        //     body: JSON.stringify(rawFormData)
-        // });
+        await fetch('/api/send', {
+            method: 'POST',
+            body: JSON.stringify(rawFormData)
+        });
     }
 
     return (
